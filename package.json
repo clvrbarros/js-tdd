@@ -1,24 +1,38 @@
 {
-  "name": "js-tdd",
+  "name": "spotify-wrapper",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --watch",
+    "test:coverage": "nyc npm test"
+  },
+  "nyc": {
+    "reporter":["text", "html"],
+    "exclude":["tests/**"]
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/clvrbarros/js-tdd.git"
+    "url": "git+https://github.com/clvrbarros/spotify-wrapper.git"
   },
   "author": "Cleverson Barros",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/clvrbarros/js-tdd/issues"
+    "url": "https://github.com/clvrbarros/spotify-wrapper/issues"
   },
-  "homepage": "https://github.com/clvrbarros/js-tdd#readme",
+  "homepage": "https://github.com/clvrbarros/spotify-wrapper#readme",
   "devDependencies": {
+    "chai": "^4.2.0",
     "eslint": "^6.2.2",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2"
+    "eslint-plugin-import": "^2.18.2",
+    "husky": "^3.0.4",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1"
+  },
+  "dependencies": {
+    "@types/chai": "^4.2.0",
+    "@types/mocha": "^5.2.7"
   }
 }
