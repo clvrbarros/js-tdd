@@ -1,7 +1,9 @@
-const getAlbum = (id) => fetch(`https://api.spotify.com/v1/albums/${id}`)
+const API_URL = require('./config');
+
+const getAlbum = (id) => fetch(`${API_URL}/albums/${id}`)
   .then((data) => data.json());
 
-const getAlbumTracks = (id) => fetch(`https://api.spotify.com/v1/albums/${id}/tracks`)
+const getAlbumTracks = (id) => fetch(`${API_URL}/albums/${id}/tracks`)
   .then((data) => data.json());
 
 module.exports = {
